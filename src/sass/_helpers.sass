@@ -1,0 +1,15 @@
+@function toVH($parameter, $base)
+  @if($base)
+    @return ($parameter/$base*100)+0vh
+  @else
+    @return ($parameter/900*100)+0vh
+
+@function toVW($parameter, $base)
+  @if($base)
+    @return ($parameter/$base*100)+0vw
+  @else
+    @return ($parameter/1580*100)+0vw
+
+@function getPercent($parameter, $base)
+  @return $parameter / $base * 100 + 0%
+

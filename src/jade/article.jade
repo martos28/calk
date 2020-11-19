@@ -1,0 +1,17 @@
+---
+title: Статья
+---
+extends layouts/_layout
+block content
+  include ./blocks/layout/header
+  main.main
+    article.article
+      .main-wrapper
+        include ./blocks/article-page/breadcrumbs
+        include ./blocks/article-page/ahead
+        include ./blocks/article-page/articleBody
+        include ./blocks/article-page/share
+        include ./blocks/article-page/comments
+        include ./blocks/main-page/anonce
+        include ./blocks/article-page/related
+  include ./blocks/layout/footer

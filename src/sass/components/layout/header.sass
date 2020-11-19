@@ -1,0 +1,201 @@
+.header
+  position: fixed
+  z-index: 5
+  top: 0
+  left: 50%
+  transform: translateX(-50%)
+  height: 80px
+  width: 100%
+  max-width: 1440px
+  display: flex
+  align-items: center
+  background: $white
+  transition: $trs
+  +m(1279)
+    height: 60px
+
+  &--active
+    box-shadow: 1.5px 3px 2px rgba($blue, 0.3)
+  &--menuOpened
+    position: absolute
+  &_left
+    flex: 1
+    display: flex
+    align-items: center
+    padding: 0 0 0 40px
+    +m(1279)
+      padding-left: 15px
+  &_right
+    background: $blue
+    flex-shrink: 0
+    padding: 0 40px
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    +m(1279)
+      padding: 0 20px
+    +m(1023)
+      padding-left: 0
+    +m(479)
+      padding-right: 15px
+  &_logo
+    display: block
+    width: 264px
+    +m(1365)
+      width: 200px
+    +m(1279)
+      width: 180px
+    +m(479)
+      width: 160px
+      height: 12px
+    &_pic
+      display: block
+      width: 100%
+      height: auto
+      +m(479)
+        width: 160px
+        height: 12px
+  &_nav
+    margin-left: 60px
+    +m(1365)
+      margin-left: 30px
+    +m(1279)
+      margin-left: 20px
+    +m(1023)
+      display: none
+      position: fixed
+      z-index: 6
+      width: 80%
+      height: 80%
+      background: $blue
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      margin-left: 0
+
+    &--opened
+      +m(1023)
+        width: 100vw
+        height: 100vh
+        opacity: 1
+        display: flex
+        align-items: center
+        justify-content: center
+    &_list
+      display: flex
+      align-items: center
+      +m(1023)
+        flex-direction: column
+        align-items: flex-start
+    &_item
+      display: block
+      &:not(:first-of-type)
+        margin-left: 25px
+        +m(1439)
+          margin-left: toVW(15, 1440)
+        +m(1365)
+          margin-left: toVW(10, 1440)
+        +m(1279)
+          margin-left: 7px
+        +m(1023)
+          margin-left: 0
+          margin-top: 4vh
+    &_lnk
+      display: block
+      padding: 0 5px
+      text-transform: uppercase
+      color: $darkGray
+      letter-spacing: 0.5px
+      font: 16px/1 rb
+      +m(1279)
+        font-size: 14px
+      +m(1023)
+        color: $white
+  &_menuToggler
+    display: none
+    align-items: center
+    justify-content: center
+    width: 60px
+    height: 60px
+    padding: 0
+    background-color: transparent
+    border: none
+    background-color: $blue
+
+    +m(1023)
+      display: flex
+    +m(479)
+      width: 50px
+    &_icon
+      display: block
+      width: 100%
+      height: auto
+      max-width: 24px
+      max-height: 24px
+      +m(479)
+        max-width: 20px
+        max-height: 20px
+      path
+        fill: #fff
+  &_rightsideButton
+    display: block
+    width: 24px
+    height: 24px
+    +m(1279)
+      width: 18px
+      height: 18px
+    &:not(:first-of-type)
+      margin-left: 40px
+      +m(1279)
+        margin-left: 15px
+    &_icon
+      display: block
+      width: 100%
+      height: auto
+      max-width: 100%
+      max-height: 100%
+  &_menuCloseBtn
+    position: absolute
+    top: 15px
+    right: 15px
+    width: 35px
+    height: 35px
+    background-color: transparent
+    padding: 0
+    border: none
+    display: none
+
+    +m(1023)
+      display: block
+    +m(479)
+      width: 24px
+      height: 24px
+    &_icon
+      display: block
+      width: 100%
+      height: auto
+      max-width: 100%
+      max-height: 100%
+      path
+        fill: $white
+
+.header_search 
+    position: absolute;
+    z-index: 2;
+    right: calc(100% - 74px);
+    background: #0078dc;
+    top: 0;
+    bottom: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 40px;
+    padding-right: 10px;
+    display: flex;
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    will-change: width, opacity;
+

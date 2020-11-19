@@ -1,0 +1,247 @@
+.ahead {
+    border-top: 2px solid #F5F5F5;
+    border-bottom: 1px solid #CCCCCC;
+    position: relative;
+    @include cl;
+
+    &_filter {
+        box-shadow: inset 0 15px 15px rgba(#fff, 0.5);
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        @extend .container;
+
+        @include m(479) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .isTouch & {
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            @include m(479) {
+                padding-bottom: 20px;
+            }
+        }
+        &_title {
+            display: block;
+            color: $titleColor;
+            font: 500 40px/1.25 rm;
+            white-space: nowrap;
+            flex-shrink: 0;
+
+            @include m(767) {
+                font-size: 32px;
+            }
+        }
+        &_selector {
+            margin-left: 32px;
+            position: relative;
+
+            @include m(767) {
+                margin-left: 20px;
+            }
+            @include m(479) {
+                margin-left: 0;
+                margin-top: 17px;
+            }
+        }
+        &_button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 177px;
+            height: 44px;
+            border: 2px solid $blue;
+            background-color: transparent;
+            border-radius: 22px;
+            padding: 0;
+            cursor: pointer;
+            transition: $trs;
+
+            @include m(479) {
+                width: 160px;
+            }
+            &_content {
+                display: block;
+                color: $blue;
+                font: 700 16px/1 rb;
+            }
+            &_icon {
+                display: block;
+                margin-left: 9px;
+                width: 6px;
+                height: 4px;
+                cursor: pointer;
+            }
+        }
+        &_list {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            min-width: 100%;
+            background-color: $white;
+            box-shadow: 0 5px 5px rgba(#000, 0.5);
+            padding: 10px 0;
+            display: none;
+            opacity: 0;
+
+            &_item {
+                display: block;
+                padding: 5px 15px;
+                cursor: pointer;
+                background-color: $white;
+                transition: $trs;
+                color: $darkGray;
+                font: 500 16px/1 rm;
+                white-space: nowrap;
+
+                .ahead &:hover {
+                    background-color: rgba($blue, 0.8);
+                    color: $white;
+                }
+                .freshNews &:hover {
+                    background-color: rgba($blue, 0.8);
+                    color: $white;
+                }
+            }
+        }
+        &_map {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: auto;
+            height: 100%;
+            margin-left: 52px;
+
+
+            &_active {
+                cursor: pointer;
+            }
+            &_point {
+                cursor: pointer;
+            }
+            path, polygon {
+                transition: 0.15s linear;
+                &:not(.freshNews_filter_map_point) {
+                    .ahead &:hover{
+                        fill: $blue !important;
+                    }
+                    .freshNews &:hover {
+                        fill: $green !important;
+                    }
+                }
+                &.hovered {
+                    fill: $green !important;
+                }
+            }
+        }
+    }
+    &_mapWrapper {
+        flex: 1 1 100%;
+        max-width: 100%;
+        height: 100%;
+        min-height: 192px;
+        position: relative;
+        overflow: hidden;
+        cursor: default !important;
+        user-select: none;
+        touch-action: pinch-zoom;
+
+        .isTouch & {
+            display: none;
+        }
+    }
+    &_mapZoomer {
+        top: 50%;
+        position: absolute;
+        right: 15px;
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        padding: 0;
+        display: block;
+        color: $white;
+        font: 700 18px/1 rb;
+        transform: translateY(-100%);
+        z-index: 3;
+        text-transform: uppercase;
+        line-height: 12px;
+        border: 1px solid $white;
+        transition: $trs;
+
+        .ahead & {
+            background-color: rgba($blue, 0.7);
+            &[disabled] {
+                background-color: rgba($darkGray, 0.9);
+                opacity: 0.7;
+                cursor: default;
+            }
+        }
+        .freshNews & {
+            background-color: rgba($green, 0.7);
+            &[disabled] {
+                background-color: rgba($darkGray, 0.9);
+                opacity: 0.7;
+                cursor: default;
+            }
+        }
+        &:not(:first-of-type) {
+            transform: translateY(40%);
+        }
+        .ahead &:hover {
+            background-color: rgba($blue, 1);
+
+            &[disabled] {
+                background-color: rgba($darkGray, 0.9);
+            }
+        }
+        .freshNews &:hover {
+            background-color: rgba($green, 1);
+
+            &[disabled] {
+                background-color: rgba($darkGray, 0.9);
+            }
+        }
+    }
+    &_breadcrumbs {
+        top: 50px;
+        left: 15px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        z-index: 3;
+
+        .isTouch & {
+            top: 20px;
+        }
+        &_item {
+            display: block;
+            color: $titleColor;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font: 500 12px/1 rm;
+
+            &[href] {
+                opacity: 0.5;
+            }
+            &:not(:first-child) {
+                margin-left: 10px;
+            }
+            &:not(:last-child) {
+                &::after {
+                    content: '—';
+                    margin-left: 10px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,265 @@
+.main-media {
+    margin-top: 20px;
+    display: flex;
+
+    @include m(1139) {
+        flex-direction: column;
+    }
+    &_ahead {
+        display: flex;
+        align-items: center;
+
+        @include m(479) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &--video {
+            padding-left: 80px;
+
+            @include m(1439) {
+                padding-left: 15px;
+            }
+        }
+        &--peoples {
+            padding-right: 80px;
+
+            @include m(1439) {
+                padding-right: 15px;
+            }
+        }
+    }
+    &_title {
+        display: block;
+        color: $titleColor;
+        font: 500 30px/1.33 rm;
+
+        @include m(1439) {
+            font-size: 24px;
+        }
+    }
+    &_readmore {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $blue;
+        font: 700 16px/1 rb;
+        margin-left: 30px;
+        margin-top: 10px;
+
+        @include m(1439) {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        @include m(479) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+    &_video {
+        width: 100%;
+        max-width: getPercent(920, 1440);
+        user-select: none;
+        display: flex;
+        flex-direction: column;
+
+        @include m(1139) {
+            max-width: 100%;
+        }
+        &_item {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            z-index: 1;
+            object-fit: fill;
+            height: 100%;
+        }
+        &_body {
+            margin-top: 40px;
+            overflow: hidden;
+            position: relative;
+            flex: 1 1 auto;
+
+            &::before {
+                content: '';
+                display: block;
+                padding-top: getPercent(460, 920);
+
+                @include m(767) {
+                    padding-top: 320px;
+                }
+            }
+        }
+        &_play {
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            width: 80px;
+            height: 80px;
+
+            @include m(767) {
+                width: 60px;
+                height: 60px;
+            }
+            &_icon {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        &_data {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 40px 25px 80px;
+            background-color: rgba(#E7F4FF, 0.95);
+
+            @include m(1439) {
+                padding: 20px 40px 25px 15px;
+            }
+        }
+        &_title {
+            display: block;
+            color: $titleColor;
+            font: 18px/1.44 rb;
+        }
+        &_meta {
+            margin-top: 13px;
+            display: flex;
+            align-items: center;
+        }
+        &_duration {
+            display: flex;
+            align-items: center;
+            margin-right: auto;
+
+            &_icon {
+                display: block;
+                width: 11px;
+                height: 13px;
+            }
+            &_val {
+                display: block;
+                margin-left: 10px;
+                color: $titleColor;
+                font: 400 16px/1 rr;
+            }
+        }
+        &_metaBlock {
+            display: flex;
+            align-items: center;
+
+            &_item {
+                display: flex;
+                align-items: center;
+
+                &:not(:first-of-type) {
+                    margin-left: 20px;
+                }
+                &_icon {
+                    display: block;
+                    height: auto;
+                    width: 14px;
+                    max-height: 14px;
+                }
+                &_val {
+                    display: block;
+                    margin-left: 10px;
+                    color: $titleColor;
+                    font: 400 16px/1 rr;
+                }
+            }
+        }
+    }
+    &_peoples {
+        margin-left: auto;
+        width: 100%;
+        max-width: getPercent(480, 1440);
+        display: flex;
+        flex-direction: column;
+
+        @include m(1139) {
+            max-width: 100%;
+            margin-top: 40px;
+            padding: toVW(50, 1440);
+        }
+        &_block {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            flex-shrink: 0;
+
+            @include m(1139) {
+                flex-direction: row;
+            }
+            @include m(479) {
+                flex-direction: column;
+            }
+        }
+        &_pic {
+            width: 100%;
+            position: relative;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+
+            @include m(1139) {
+                width: 45%;
+            }
+            @include m(479) {
+                width: 100%;
+            }
+            &:before {
+                content: '';
+                display: block;
+                padding-top: getPercent(360, 480);
+            }
+        }
+        &_content {
+            border-left: 2px solid $blue;
+            padding: 20px 80px 0 20px;
+            flex: 1;
+
+            @include m(1139) {
+                max-width: 50%;
+                margin-left: 30px;
+                padding: 20px 15px 0 20px;
+            }
+            @include m(479) {
+                margin-left: 0;
+                margin-top: 15px;
+                max-width: 100%;
+                padding: 5px 15px 5px 15px;
+            }
+        }
+        &_title {
+            display: block;
+            color: $titleColor;
+            font: 700 18px/1.44 rb;
+        }
+        &_description {
+            display: block;
+            margin-top: 10px;
+            color: $titleColor;
+            font: 400 16px/1.37 rr;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.container
+	width: 100%
+	max-width: 1310px
+	padding: 0 15px
+	margin: 0 auto
+
+.row
+	display: flex
+	flex-wrap: wrap
+	margin: 0 -15px
+
+
+@for $i from 1 through 12
+	.col-#{$i}
+		flex: 1 1 100/12*$i+0%
+		max-width: 100/12*$i+0%
+		padding: 0 15px
+

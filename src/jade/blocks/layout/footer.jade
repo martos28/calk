@@ -1,0 +1,175 @@
+footer.footer
+  .container
+    .row
+      .col-4
+        .footer_left
+          a.footer_logo(href="#")
+            +icon('icon-project-logo', 'footer_logo_icon')
+          p.footer_copyright © 2013 — 2020 ПАО «Юнипро»
+      .col-4
+        .footer_centred
+          a.footer_social.footer_social--in(href="#")
+            +icon('icon-instagram', 'footer_social_icon')
+          a.footer_social.footer_social--fb(href="#")
+            +icon('icon-facebook', 'footer_social_icon')
+          a.footer_social.footer_social--proj(href="#")
+            +icon('icon-project-logo', 'footer_social_icon')
+      .col-4
+        .footer_right
+          button.footer_goTop
+            | наверх ↑
+          img.footer_agelimit(src="./img/agelimit.svg")
+
+section#login.popup 
+  .popup_body
+    button.popup_close
+      img.popup_close_icon(src='/local/templates/main/img/close.svg')
+    .pop-ovh.maxw450
+      .js_form-slider.swiper-container-fade.swiper-container
+        .swiper-wrapper.swiper-wrapper_h-auto
+          article.swiper-slide
+            form#loginform.forms.forms_pad25(action='/konkurs/conkurs_participants' method='post' novalidate)
+              input(type='hidden' name='backurl' value='/konkurs/conkurs_participants')
+              input(type='hidden' name='AJAX-ACTION' value='Y')
+              input(type='hidden' name='AUTH_FORM' value='Y')
+              input(type='hidden' name='TYPE' value='AUTH')
+              h2.login_title Авторизация
+              .forms-group
+                label.forms-label(for='USER_LOGIN') E-mail
+                input#USER_LOGIN.form-field(required type='email' name='USER_LOGIN' aria-describedby='emailHelp')
+                small.forms-input-errors.messages
+              .forms-group
+                label.forms-label(for='USER_PASSWORD') Пароль
+                input#USER_PASSWORD.form-field(required type='password' name='USER_PASSWORD' aria-describedby='emailHelp')
+                small.forms-input-errors.messages
+              p.forms-error
+              button.forms-enter-btn(type='submit') Войти
+              p.forms-regs
+                button.js-go(data-slide='1' type='button') Регистрация
+              p.forms-pass
+                button.js-go(data-slide='2' type='button') Восстановить пароль
+          article.swiper-slide.swiper-slide_bg-w.swiper-slide-next
+            form#regform.forms.forms_pad25.maxw450(action='/konkurs/conkurs_participants' method='post' novalidate)
+              input(type='hidden' name='AJAX-ACTION' value='Y')
+              input(type='hidden' name='AUTH_FORM' value='Y')
+              input(type='hidden' name='TYPE' value='REG')
+              input(type='hidden' name='register_submit_button' value='Зарегегстрировать')
+              h2.login_title Регистрация
+              .forms-group
+                label.forms-label(for='FIELD_LOGIN')
+                  | Email :
+                  span.starrequired *
+                input.form-field(required size='30' type='email' name='REGISTER[LOGIN]' autocomplete='off')
+                small.forms-input-errors.messages
+              .forms-group
+                label.forms-label(for='FIELD_PASSWORD')
+                  | Пароль :
+                  span.starrequired *
+                input.form-field(required size='30' type='password' name='REGISTER[PASSWORD]' autocomplete='off')
+                small.forms-input-errors.messages
+              .forms-group
+                label.forms-label(for='FIELD_CONFIRM_PASSWORD')
+                  | Подтверждение пароля :
+                  span.starrequired *
+                input.form-field(required size='30' type='password' name='REGISTER[CONFIRM_PASSWORD]' autocomplete='off')
+                |  
+                small.forms-input-errors.messages
+              p.forms-error
+                
+              .forms-agree-row.forms-group
+                input#iagree.inp-cbx(checked required name='iagree' type='checkbox' style='display: none;')
+                label.cbx(for='iagree')
+                  span
+                    svg(width='12px' height='9px' viewBox='0 0 12 9')
+                      polyline(points='1 5 4 8 11 1')
+                  span
+                    i.forms-agree-text-line Регистрируясь, я принимаю
+                    a.agree-link(href='/terms.php') пользовательское соглашение
+                .messages
+              input.forms-enter-btn(type='submit' name='register_submit_button' value='Зарегистрироваться')
+              p.forms-pass
+                button.js-go(type='button' data-slide='2') Восстановить пароль
+          article.swiper-slide.swiper-slide_bg-w(style='width: 450px; transition-duration: 0ms; opacity: 0; transform: translate3d(-900px, 0px, 0px);')
+            #comp_dcc69558d5140ce8206542a134b855b3
+              form#fogetform.forms.forms_pad25.maxw450(novalidate name='bform' method='post' target='_top' action='/konkurs/conkurs_participants')
+                input(type='hidden' name='AJAX-ACTION' value='Y')
+                input(type='hidden' name='AUTH_ACTION' value='Выслать')
+                input(type='hidden' name='TYPE' value='FOGET_PASS')
+                h2.login_title Восстановление пароля
+                p.form-text-aftertitle
+                  | Введите email, с которым Вы регистрировались
+                  br
+                  | на сайте
+
+                .forms-group
+                  label.forms-label(for='restemail') E-mail
+                  input.form-field(type='email' required name='USER_EMAIL' maxlength='255')
+                  small.forms-input-errors.messages
+                p.forms-error
+                p.alert.alert-success.hidden
+                input.forms-enter-btn(type='submit' name='AUTH_ACTION' value='Выслать')
+                p.forms-regs
+                  button.js-go(type='button' data-slide='1') Регистрация
+        //  swiper-wrapper swiper-wrapper_h-auto 
+      //  js_form-slider" 
+      .login_body
+        span.login_head Войти через соцсети:
+        .login_items
+          button.login_item
+            svg.icon-vk.login_item_icon
+              use(href='/local/templates/main/img/sprite.svg#icon-vk')
+          button.login_item
+            svg.icon-facebook.login_item_icon
+              use(href='/local/templates/main/img/sprite.svg#icon-facebook')
+          button.login_item
+            svg.icon-googlePlus.login_item_icon
+              use(href='/local/templates/main/img/sprite.svg#icon-googlePlus')
+    //  pop-ovh maxw450" 
+  //  class="popup_body 
+
+
+section#participation_competition.popup 
+  .popup_body
+    button.popup_close
+      img.popup_close_icon(src='/local/templates/main/img/close.svg')
+    .pop-ovh.maxw450
+      form#regform.forms.forms_pad25.maxw450(action='/konkurs/conkurs_participants' method='post' novalidate)
+              input(type='hidden' name='AJAX-ACTION' value='Y')
+              input(type='hidden' name='AUTH_FORM' value='Y')
+              input(type='hidden' name='TYPE' value='REG')
+              input(type='hidden' name='register_submit_button' value='Зарегегстрировать')
+              h2.login_title Принять участие в конкурсе
+              .forms-group
+                label.forms-label(for='FIELD_LOGIN')
+                  | Email :
+                  span.starrequired *
+                input.form-field(required size='30' type='email' name='REGISTER[LOGIN]' autocomplete='off')
+                small.forms-input-errors.messages
+              .forms-group
+                label.forms-label(for='FIELD_PASSWORD')
+                  | Пароль :
+                  span.starrequired *
+                input.form-field(required size='30' type='password' name='REGISTER[PASSWORD]' autocomplete='off')
+                small.forms-input-errors.messages
+              .forms-group
+                label.forms-label(for='FIELD_CONFIRM_PASSWORD')
+                  | Подтверждение пароля :
+                  span.starrequired *
+                input.form-field(required size='30' type='password' name='REGISTER[CONFIRM_PASSWORD]' autocomplete='off')
+                |  
+                small.forms-input-errors.messages
+              p.forms-error
+                
+              .forms-agree-row.forms-group
+                input#iagree.inp-cbx(checked required name='iagree' type='checkbox' style='display: none;')
+                label.cbx(for='iagree')
+                  span
+                    svg(width='12px' height='9px' viewBox='0 0 12 9')
+                      polyline(points='1 5 4 8 11 1')
+                  span
+                    i.forms-agree-text-line Регистрируясь, я принимаю
+                    a.agree-link(href='/terms.php') пользовательское соглашение
+                .messages
+              input.forms-enter-btn(type='submit' name='register_submit_button' value='Зарегистрироваться')
+              p.forms-pass
+                button.js-go(type='button' data-slide='2') Восстановить пароль

@@ -1,0 +1,85 @@
+.announcement {
+    padding: 40px 0 60px;
+    background: url(../img/main-page-announcement.jpg) no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+    &_container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        @include m(1310) {
+            padding: 0 15px;
+        }
+    }
+    &_row {
+        align-items: center;
+        display: flex;
+
+        @include m(767) {
+            flex-direction: column;
+        }
+    }
+    &_contentBlock {
+        margin-right: auto;
+    }
+    &_title {
+        display: block;
+        color: $white;
+        font: 500 30px/1.33 rm;
+    }
+    &_content {
+        display: block;
+        margin-top: 10px;
+        color: $white;
+        font: 700 18px/1.44 rb;
+        max-width: 620px;
+
+        @include m(969) {
+            font-size: 16px;
+        }
+    }
+    &_lead {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        width: 400px;
+        flex-shrink: 0;
+        height: 48px;
+        border-radius: 24px;
+        color: $blue;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font: 700 16px/1 rb;
+        transition: $trs;
+
+        @include m(969) {
+            max-width: 270px;
+            margin-left: 30px;
+            align-self: flex-end;
+        }
+        @include m(767) {
+            margin-top: 30px;
+        }
+        &:hover {
+            background-color: $blue;
+            color: $white;
+        }
+    }
+}
+

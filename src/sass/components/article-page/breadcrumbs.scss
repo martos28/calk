@@ -1,0 +1,43 @@
+.article_breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+
+    @include m(767) {
+        padding: 10px 15px;
+        overflow-x: auto;
+    }
+    &_item {
+        display: block;
+        color: $titleColor;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font: 500 12px/1 rm;
+
+        @include m(767) {
+            font-size: 11px;
+            white-space: nowrap;
+        }
+        &[href] {
+            opacity: 0.5;
+        }
+        &:not(:first-child) {
+            margin-left: 10px;
+
+            @include m(767) {
+                margin-left: 5px;
+            }
+        }
+        &:not(:last-child) {
+            &::after {
+                content: '—';
+                margin-left: 10px;
+                display: inline-block;
+
+                @include m(767) {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}

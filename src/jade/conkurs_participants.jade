@@ -1,0 +1,41 @@
+---
+title: Статья
+---
+extends layouts/_layout
+block content
+  include ./blocks/layout/header
+
+  - var page = 'part'
+
+  main.main
+    .konkurs
+      .main-wrapper  
+        .konkurs-slider  
+          .konkurs-slider__wraper.swiper-wrapper
+            .konkurs-slide.swiper-slide
+              img(src="https://placeimg.com/1440/500/arch", alt="" width="1440" height="500").konkurs-slide__image
+              .konkurs-slide__content
+                .konkurs-slide__type Конкурс   
+                h3.konkurs-slide__title Длинное название конкурса
+                p.konkurs-slide__texts Небольшое описание конкурса, примите участие быстрее, <br> он классный! Призовой фонд более 1 000 000 P.
+                a(href="").konkurs-slide__btn-go Принять участие
+            
+          .swiper-pagination.konkurs-slider-pagination 
+        include ./blocks/konkurs/nav
+        
+
+        .newsBlock
+          .container          
+            .row
+              include ./blocks/konkurs/participants_item
+              include ./blocks/konkurs/participants_item
+              include ./blocks/konkurs/participants_item
+              include ./blocks/konkurs/participants_item
+              include ./blocks/konkurs/participants_item
+              include ./blocks/konkurs/participants_item
+
+      
+
+
+        
+  include ./blocks/layout/footer

@@ -1,0 +1,29 @@
+/// including mixins ///
+
+@mixin cl()
+	&:before, &:after
+		content: ''
+		display: table
+		clear: both
+// usage: +cl
+
+
+=ft($var, $font)
+	+font-face("#{$var}", "../fonts/#{$font}", $file-formats: woff ttf svg)
+
+//usage: +ft('variable', 'fontname')
+
+
+=bg($name, $a: 'jpg')
+	background: url(../img/#{$name}.#{$a}) no-repeat top center/cover
+
+
+
+// media queries //
+@mixin m ($m)
+	@media only screen and (max-width: $m + px)
+		@content
+
+@mixin min ($mn)
+	@media only screen and (min-width: $mn + px)
+		@content

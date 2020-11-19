@@ -1,0 +1,14 @@
+mixin shortnews(title, description, img)
+  -var currentImg = 'background-image: url(./img/temp/shortnews-' + img +'.jpg)'
+  a.shortnews(href="#")
+    .shortnews_pic(style=currentImg)
+    .shortnews_content
+      h4.shortnews_title=title
+      p.shortnews_description=description
+      .shortnews_meta
+        .shortnews_meta_item
+          +icon('icon-like--dark', 'shortnews_meta_item_icon')
+          span.shortnews_meta_item_val 10
+        .shortnews_meta_item
+          +icon('icon-comments--dark', 'shortnews_meta_item_icon')
+          span.shortnews_meta_item_val 5

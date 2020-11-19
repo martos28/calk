@@ -1,0 +1,13 @@
+include ../base/shortnews/_item
+- var quantity = 12;
+
+section.category
+  .category_body
+    .container
+      .row
+        -for (let i = 0; i < quantity; i++) {
+          section(class='col-4 category_item')
+            +shortnews('Поставлен на хозяйство', 'Начальником административнохозяйственного отдела Сургутской ГРЭС-2 назначен Антон Герасимов', 'rectangle')
+        -}
+      .row
+        button.category_readmore Загрузить еще

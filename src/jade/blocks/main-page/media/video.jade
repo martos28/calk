@@ -1,0 +1,22 @@
+section.main-media_video
+  section.main-media_ahead.main-media_ahead--video
+    h2.main-media_title Видео
+    a.main-media_readmore(href="#") Все материалы →
+  section.main-media_video_body
+    video(webkit-playsinline="true" playsinline="true" poster="./img/temp/video-preview.jpg" class="main-media_video_item")
+      <source src="./data/video/nature.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>)
+    button.main-media_video_play
+      img.main-media_video_play_icon(src="./img/video-play.svg")
+    section.main-media_video_data
+      h4.main-media_video_title Название видеоролика
+      .main-media_video_meta
+        span.main-media_video_duration
+          +icon('icon-clock', 'main-media_video_duration_icon')
+          span.main-media_video_duration_val 2:41
+        .main-media_video_metaBlock
+          .main-media_video_metaBlock_item
+            +icon('icon-like--dark', 'main-media_video_metaBlock_item_icon')
+            span.main-media_video_metaBlock_item_val 10
+          .main-media_video_metaBlock_item
+            +icon('icon-comments--dark', 'main-media_video_metaBlock_item_icon')
+            span.main-media_video_metaBlock_item_val 3

@@ -1,0 +1,289 @@
+.newsBlock {
+    margin-top: 20px;
+    padding: 40px 0;
+
+    &--article {
+        .col-3 {
+            @include m(1299) {
+                flex: 1 1 50%;
+                max-width: 50%;
+                margin-top: 20px;
+            }
+        }
+    }
+    &--1 {
+        @include m(969) {
+            margin-top: 50px;
+            padding: 0;
+        }
+    }
+    &--4 {
+        .newsBlock_body {
+            @include m(1139) {
+                margin-top: 0;
+            }
+        }
+        .col-3 {
+            @include m(1139) {
+                flex: 1 1 50%;
+                max-width: 50%;
+                margin-top: 30px;
+            }
+        }
+    }
+    &--colored {
+        background-color: #E7F4FF;
+
+        .col-4:not(:first-of-type) {
+            @include m(767) {
+                margin-top: 35px;
+            }
+        }
+    }
+    &_ahead {
+        display: flex;
+        align-items: center;
+
+        @include m(479) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+    &_title {
+        display: block;
+        color: $titleColor;
+        font: 500 30px/1.33 rm;
+
+        @include m(1439) {
+            font-size: 24px;
+        }
+    }
+    &_readmore {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: $blue;
+        font: 700 16px/1 rb;
+        margin-left: 30px;
+        margin-top: 10px;
+
+        @include m(1439) {
+            font-size: 14px;
+            margin-left: 20px;
+        }
+        @include m(479) {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+    &_body {
+        margin-top: 40px;
+        .newsBlock_col--3 & {
+            @include m(969) {
+                margin-top: 20px;
+            }
+        }
+    }
+    &_col {
+        flex: 1;
+        max-width: 50%;
+
+        &--2 {
+            @include m(1139) {
+                flex: 1;
+                max-width: 100%;
+                min-width: 100%;
+            }
+            .col-6 {
+                @include m(767) {
+                    flex: 1;
+                    max-width: 100%;
+                    min-width: 100%;
+                }
+            }
+        }
+        &--3 {
+            @include m(969) {
+                flex: 1;
+                max-width: 100%;
+                min-width: 100%;
+            }
+        }
+    }
+    .col-3, .col-4 {
+        @include m(969) {
+            flex: 1;
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+}
+
+.shortnews {
+    display: block;
+    width: 100%;
+    position: relative;
+
+    .newsBlock_col--3:nth-of-type(even) & {
+        @include m(969) {
+            flex-direction: row-reverse;
+        }
+        @include m(479) {
+            flex-direction: column;
+        }
+    }
+    .oneColNews & {
+        @include m(969) {
+            display: flex;
+        }
+        @include m(479) {
+            flex-direction: column;
+        }
+    }
+    .newsBlock_col--2 & {
+        @include m(767) {
+            display: flex;
+        }
+        @include m(479) {
+            flex-direction: column;
+        }
+    }
+    .newsBlock_col--2 .col-6:nth-of-type(even) & {
+        @include m(767) {
+            flex-direction: row-reverse;
+            margin-top: 35px;
+        }
+        @include m(479) {
+            flex-direction: column;
+        }
+    }
+    &:hover {
+        &::before {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: -7px;
+        top: -7px;
+        right: -7px;
+        bottom: -7px;
+        border: 2px inset $blue;
+        border-radius: 3px;
+        visibility: hidden;
+        opacity: 0;
+        transition: $trs;
+    }
+    &_pic {
+        position: relative;
+        width: 100%;
+        max-height: 260px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        user-select: none;
+
+        &::before {
+            content: '';
+            padding-top: 100%;
+            display: block;
+        }
+        .newsBlock_col--3 & {
+            @include m(969) {
+                max-width: 47.5%;
+                margin-right: 5%;
+            }
+            @include m(767) {
+                min-width: 190px;
+                margin-right: 30px;
+            }
+            @include m(479) {
+                min-width: 100%;
+                margin-right: 0;
+            }
+        }
+        .newsBlock_col--3:nth-of-type(even) & {
+            @include m(969) {
+                margin-right: 0;
+                margin-left: 5%;
+            }
+            @include m(767) {
+                margin-left: 30px;
+            }
+            @include m(479) {
+                margin-left: 0;
+            }
+        }
+        .newsBlock_col--2 & {
+            @include m(767) {
+                min-width: 190px;
+                margin-right: 30px;
+            }
+            @include m(479) {
+                max-width: 100%;
+                margin-right: 0;
+            }
+        }
+        .newsBlock_col--2 .col-6:nth-of-type(even) & {
+            @include m(767) {
+                margin-right: 0;
+                margin-left: 30px;
+            }
+            @include m(479) {
+                margin-left: 0;
+            }
+        }
+    }
+    &_content {
+        margin-top: 20px;
+        @include cl;
+    }
+    &_title {
+        display: block;
+        color: $titleColor;
+        font: 700 18px/1.44 rb;
+
+        @include m(969) {
+            font-size: 16px;
+        }
+    }
+    &_description {
+        display: block;
+        margin-top: 10px;
+        color: $titleColor;
+        font: 400 16px/1.37 rr;
+
+        @include m(969) {
+            font-size: 14px;
+        }
+    }
+    &_meta {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+
+        &_item {
+            display: flex;
+            align-items: center;
+
+            &:not(:first-of-type) {
+                margin-left: 20px;
+            }
+            &_icon {
+                display: block;
+                height: auto;
+                width: 14px;
+                max-height: 14px;
+            }
+            &_val {
+                display: block;
+                margin-left: 10px;
+                color: $titleColor;
+                font: 400 16px/1 rr;
+            }
+        }
+    }
+}

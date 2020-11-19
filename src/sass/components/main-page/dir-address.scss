@@ -1,0 +1,102 @@
+.dirAddress {
+    margin-top: 60px;
+    padding-bottom: 60px;
+
+    .col-9 {
+        @include m(969) {
+            max-width: 65%;
+        }
+        @include m(767) {
+            max-width: 100%;
+        }
+    }
+    .col-3 {
+        @include m(969) {
+            min-width: 270px;
+            flex-shrink: 0;
+        }
+        @include m(767) {
+            max-width: 100%;
+            margin-top: 40px;
+        }
+    }
+    .row {
+        flex-wrap: nowrap;
+
+        @include m(767) {
+            flex-direction: column;
+        }
+    }
+    &_title {
+        display: block;
+        color: $titleColor;
+        font: 500 40px/1.25 rm;
+
+        @include m(1139) {
+            font-size: 34px;
+        }
+        @include m(767) {
+            font-size: 30px;
+        }
+    }
+    &_content {
+        display: block;
+        margin-top: 40px;
+        color: $blue;
+        font: 500 24px/1.5 rm;
+
+        @include m(1139) {
+            font-size: 18px;
+        }
+        @include m(767) {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    }
+    &_autor {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+
+        @include m(1139) {
+            margin-top: 15px;
+        }
+        &_img {
+            display: block;
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            border-radius: 50%;
+
+            @include m(479) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+        &_data {
+            display: block;
+            margin-left: 40px;
+
+            @include m(479) {
+                margin-left: 15px;
+            }
+        }
+        &_name {
+            display: block;
+            color: $darkGray;
+            font: 700 18px/1.44 rb;
+        }
+        &_position {
+            display: block;
+            margin-top: 13px;
+            color: $darkGray;
+            font: 400 16px/1.37 rr
+        }
+    }
+    &_promo {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+}

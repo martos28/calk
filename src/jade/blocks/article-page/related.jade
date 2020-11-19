@@ -1,0 +1,14 @@
+include ../base/shortnews/_item
+- var quantity = 4;
+
+section(class="newsBlock newsBlock--article")
+  .container
+    .newsBlock_ahead
+      h2.newsBlock_title Читайте также
+  .newsBlock_body
+    .container
+      .row
+        -for(let i=0; i<quantity; i++) {
+            section(class='col-'+ 12/quantity)
+              +shortnews('Поставлен на хозяйство', 'Начальником административнохозяйственного отдела Сургутской ГРЭС-2 назначен Антон Герасимов', 'rectangle')
+          -}

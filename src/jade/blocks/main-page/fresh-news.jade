@@ -1,0 +1,77 @@
+section.freshNews
+  .freshNews_filter
+    h2.freshNews_filter_title Новое на сайте
+    .freshNews_filter_selector.ahead_filter_selector_foundPoint
+      button.freshNews_filter_button.ahead_filter_button_foundPoint
+        span.freshNews_filter_button_content Все филиалы
+        +icon('icon-filter-button-arrow', 'freshNews_filter_button_icon')
+      ul.freshNews_filter_list.ahead_filter_list_foundPoint
+        li.freshNews_filter_list_item Москва
+        li.freshNews_filter_list_item Санкт-Петербург
+    .ahead_mapWrapper
+      button.ahead_mapZoomer(data-v="1") +
+      button.ahead_mapZoomer(data-v="-1" disabled) -
+      include ../base/map/map.svg
+  .freshNews_container
+    .freshNews_main
+      .freshNews_main_item(style="background-image: url(./img/temp/fresh-news-main.jpg)")
+        .freshNews_main_contentBlock
+          h4.freshNews_main_title Каска позовет на помощь
+          p.freshNews_main_content
+            | На Березовской ГРЭС проходит опытную эксплуатацию новая интегрированная система сбора обработки и анализа данных         с целью мониторинга соблюдения правил техники безопасности «Здоровье и безопасность труда».
+          .freshNews_main_bewind
+            a.freshNews_main_readmore(href="#") Подробнее →
+            .freshNews_main_metadata
+              .freshNews_main_metadata_item
+                +icon('icon-like', 'freshNews_main_metadata_icon')
+                span.freshNews_main_metadata_val 10
+              .freshNews_main_metadata_item
+                +icon('icon-comments', 'freshNews_main_metadata_icon')
+                span.freshNews_main_metadata_val 5
+    .freshNews_sub
+      .freshNews_sub_items
+        .freshNews_sub_item
+          h4.freshNews_sub_item_title Устойчивость как ключевой приоритет
+          p.freshNews_sub_item_content
+            | Руководители компании «Юнипро» и концерна Uniper приняли участие в мероприятиях Российской энергетической недели
+          .freshNews_sub_item_meta
+            .freshNews_sub_item_meta_block
+              +icon('icon-like--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 10
+            .freshNews_sub_item_meta_block
+              +icon('icon-comments--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 5
+        .freshNews_sub_item
+          h4.freshNews_sub_item_title Поставлен на хозяйство
+          p.freshNews_sub_item_content
+            | Начальником административнохозяйственного отдела Сургутской ГРЭС-2 назначен Антон Герасимов
+          .freshNews_sub_item_meta
+            .freshNews_sub_item_meta_block
+              +icon('icon-like--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 10
+            .freshNews_sub_item_meta_block
+              +icon('icon-comments--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 5
+        .freshNews_sub_item
+          h4.freshNews_sub_item_title Устойчивость как ключевой приоритет
+          p.freshNews_sub_item_content
+            | Руководители компании «Юнипро» и концерна Uniper приняли участие в мероприятиях Российской энергетической недели
+          .freshNews_sub_item_meta
+            .freshNews_sub_item_meta_block
+              +icon('icon-like--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 10
+            .freshNews_sub_item_meta_block
+              +icon('icon-comments--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 5
+        .freshNews_sub_item
+          h4.freshNews_sub_item_title Поставлен на хозяйство
+          p.freshNews_sub_item_content
+            | Начальником административнохозяйственного отдела Сургутской ГРЭС-2 назначен Антон Герасимов
+          .freshNews_sub_item_meta
+            .freshNews_sub_item_meta_block
+              +icon('icon-like--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 10
+            .freshNews_sub_item_meta_block
+              +icon('icon-comments--dark', 'freshNews_sub_item_meta_block_icon')
+              span.freshNews_sub_item_meta_block_val 5
+      a.freshNews_sub_more(href="#") все новости

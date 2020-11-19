@@ -1,0 +1,11 @@
+include _mixins
+doctype html
+html
+  head
+    include _head
+
+  body(class=bodyClass)
+    block content
+    //LOAD SCRIPTS
+    block scripts
+      script(type="text/javascript" src="js/app.js")

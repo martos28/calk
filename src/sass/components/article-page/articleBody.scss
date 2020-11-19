@@ -1,0 +1,326 @@
+.article_body {
+    margin-top: 60px;
+    @include cl;
+
+    @include m(479) {
+        margin-top: 40px;
+    }
+    .col-9 {
+        padding-right: 65px;
+        @include m(1299) {
+            flex: 1 1 calc(100% - 320px);
+            max-width: calc(100% - 320px);
+            padding-right: 30px;
+        }
+        @include m(969) {
+            flex: 1;
+            max-width: none;
+            padding-right: 15px;
+        }
+    }
+    .col-3 {
+        @include m(1299) {
+            flex: 1 1 320px;
+            max-width: 320px;
+        }
+        @include m(969) {
+            flex: auto;
+            max-width: 320px;
+            margin: 30px auto 0;
+        }
+    }
+    .row {
+        @include m(1299) {
+            flex-wrap: nowrap;
+        }
+        @include m(969) {
+            flex-direction: column;
+        }
+    }
+    h2, h3, h4, h5 {
+        display: block;
+        color: $titleColor;
+        line-height: 1.33;
+        font-family: rm;
+        letter-spacing: 1px;
+    }
+    h2 {
+        font-size: 30px;
+        margin-top: 60px;
+
+        @include m(479) {
+            margin-top: 35px;
+            font-size: 22px;
+        }
+    }
+    h3 {
+        font-size: 20px;
+        margin-top: 30px;
+
+        @include m(479) {
+            margin-top: 25px;
+            font-size: 18px;
+        }
+    }
+    h4 {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+    h5 {
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-top: 15px;
+    }
+    p {
+        display: block;
+        margin-top: 30px;
+        color: $titleColor;
+        font: 400 18px/1.44 rr;
+
+        @include m(969) {
+            font-size: 16px;
+        }
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    small {
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 40px;
+        display: block;
+        padding-top: 12px;
+        color: $darkGray;
+        letter-spacing: 0.5px;
+        text-align: center;
+        font: 400 14px/1.43 rr;
+
+        &:before {
+            content: '';
+            height: 2px;
+            max-width: 70px;
+            width: 100%;
+            background-color: $blue;
+            top: 0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    cite {
+        display: block;
+        margin-top: 40px;
+        margin-left: 40px;
+        padding-left: 40px;
+        border-left: 2px solid $blue;
+
+        @include m(1299) {
+            margin-left: 20px;
+            padding-left: 25px;
+            margin-top: 35px;
+        }
+        @include m(479) {
+            margin-left: 0px;
+            padding-left: 20px;
+            margin-top: 25px;
+        }
+        span {
+            display: block;
+            color: $blue;
+            font: 500 24px/1.5 rm;
+            font-style: italic;
+
+            @include m(1299) {
+                font-size: 22px;
+            }
+            @include m(767) {
+                font-size: 18px;
+            }
+        }
+        figure {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            img {
+                display: block;
+                max-width: 60px;
+                width: 100%;
+                margin-right: 20px;
+            }
+            figcaption {
+                display: block;
+                word-break: break-word;
+                color: $darkGray;
+                letter-spacing: 0.5px;
+                font: 400 14px/1.43 rr;
+            }
+        }
+    }
+    blockquote {
+        display: block;
+        margin-top: 14px;
+        position: relative;
+        padding-left: 80px;
+        padding-bottom: 20px;
+
+        @include m(767) {
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100px;
+            height: 90px;
+            background: url("../img/blockquote-icon.png") no-repeat center/100%;
+
+            @include m(767) {
+                width: 50px;
+                height: 45px;
+            }
+        }
+        span {
+            display: block;
+            color: $blue;
+            font: 500 24px/1.5 rm;
+            font-style: italic;
+
+            @include m(1299) {
+                font-size: 22px;
+            }
+            @include m(767) {
+                font-size: 18px;
+            }
+        }
+        figure {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+
+            img {
+                display: block;
+                max-width: 60px;
+                width: 100%;
+                margin-right: 20px;
+            }
+            figcaption {
+                display: block;
+                word-break: break-word;
+                color: $darkGray;
+                letter-spacing: 0.5px;
+                font: 400 14px/1.43 rr;
+            }
+        }
+
+    }
+    ol, ul {
+        margin-top: 20px;
+        display: block;
+        @include cl;
+
+        li {
+            display: list-item;
+            margin-top: 16px;
+            color: $blue;
+            font: 500 20px/1.5 rm;
+            padding-left: 23px;
+            margin-left: 1em;
+
+            span {
+                color: $titleColor;
+                font: 400 18px/1.44 rr;
+
+                @include m(479) {
+                    font-size: 16px;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+    ol li {
+        list-style-type: decimal;
+    }
+    ul li {
+        list-style-type: none;
+        padding-left: 0;
+        margin-left: 0;
+        display: flex;
+
+        &::before {
+            content: '—';
+            display: block;
+            flex-shrink: 0;
+            color: $blue;
+            font: 500 20px/1 rm;
+            padding-right: 1em;
+        }
+    }
+    .table {
+        max-width: 100%;
+        overflow-x: auto;
+
+        @include m(767) {
+            padding: 0 10px;
+        }
+    }
+    table {
+        margin-top: 30px;
+        width: 100%;
+
+        thead {
+            border-bottom: 2px solid $darkGray;
+
+            tr {
+                padding: 10px 0;
+            }
+            th {
+                padding: 10px;
+                letter-spacing: 0.5px;
+                color: $darkGray;
+                font: 500 14px/1.43 rm;
+                text-align: left;
+
+
+            }
+        }
+        tbody {
+
+            tr {
+                border-bottom: 2px solid #f5f5f5;
+                transition: $trs;
+
+                &:hover {
+                    background-color: #E7F4FF;
+                }
+            }
+            td {
+                padding: 10px;
+                letter-spacing: 0.5px;
+                color: $darkGray;
+                font: 400 14px/1.43 rr;
+                text-align: left;
+
+                &:first-of-type {
+                    font: 500 14px/1.43 rm;
+                }
+            }
+
+        }
+        tfoot {
+            td {
+                padding: 10px;
+                letter-spacing: 0.5px;
+                color: $darkGray;
+                font: 400 14px/1.43 rr;
+                text-align: left;
+            }
+        }
+    }
+}

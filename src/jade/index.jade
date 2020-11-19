@@ -1,0 +1,34 @@
+---
+title: Главная
+---
+extends layouts/_layout
+block content
+  include ./blocks/layout/header
+  main.main
+    .main-wrapper
+      include blocks/main-page/slider
+      include blocks/main-page/dir-address
+      include blocks/main-page/fresh-news
+      include blocks/main-page/anonce
+      include blocks/base/shortnews/shortnewsBlock
+      +shortnewsBlock('Производство', 4)
+      +shortnewsBlock('Безопасность', 3, true)
+      .container
+        .row
+          .newsBlock_col.newsBlock_col--2
+            +shortnewsBlock('Экология', 2)
+          .newsBlock_col.newsBlock_col--2
+            +shortnewsBlock('Благотворительность', 2)
+      section.main-media
+        include blocks/main-page/media/video
+        include blocks/main-page/media/peoples
+      .oneColNews
+        .container
+          .row
+            .newsBlock_col.newsBlock_col--3
+              +shortnewsBlock('Спорт', 1)
+            .newsBlock_col.newsBlock_col--3
+              +shortnewsBlock('Свободное время', 1)
+            .newsBlock_col.newsBlock_col--3
+              +shortnewsBlock('Родной край', 1)
+  include ./blocks/layout/footer

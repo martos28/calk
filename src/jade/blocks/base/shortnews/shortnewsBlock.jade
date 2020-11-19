@@ -1,0 +1,18 @@
+include _item
+
+mixin shortnewsBlock(title, quantity, isColored=false)
+  -var newsType = quantity === 3 ? 'rectangle' : 'square';
+  -var coloredClass = isColored ? ' newsBlock--colored' : '';
+  -var readmoreText = quantity>1 ? 'Все материалы →' : 'Еще →';
+  section(class="newsBlock"+' newsBlock--'+quantity+coloredClass)
+    .container
+      .newsBlock_ahead
+        h2.newsBlock_title= title
+        a.newsBlock_readmore(href="#")= readmoreText
+    .newsBlock_body
+      .container
+        .row
+          -for(let i=0; i<quantity; i++) {
+            section(class='col-'+ 12/quantity)
+              +shortnews('Поставлен на хозяйство', 'Начальником административнохозяйственного отдела Сургутской ГРЭС-2 назначен Антон Герасимов', newsType)
+          -}

@@ -1,0 +1,17 @@
+section.ahead
+  .ahead_filter
+    .ahead_breadcrumbs
+      a.ahead_breadcrumbs_item(href="#") Главная
+      span.ahead_breadcrumbs_item Проиводство
+    h2.ahead_filter_title Производство
+    .ahead_filter_selector.ahead_filter_selector_foundPoint
+      button.ahead_filter_button.ahead_filter_button_foundPoint
+        span.ahead_filter_button_content Все филиалы
+        +icon('icon-filter-button-arrow--blue', 'ahead_filter_button_icon')
+      ul.ahead_filter_list.ahead_filter_list_foundPoint
+        li.ahead_filter_list_item Москва
+        li.ahead_filter_list_item Санкт-Петербург
+    .ahead_mapWrapper
+      button.ahead_mapZoomer(data-v="1") +
+      button.ahead_mapZoomer(data-v="-1" disabled) -
+      include ../base/map/map.svg

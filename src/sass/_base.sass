@@ -1,0 +1,64 @@
+*
+	box-sizing: border-box
+	outline: none
+	appearance: none
+	text-rendering: geometricPrecision
+	-webkit-font-smoothing: antialiased
+	font-smooth: always
+	&::selection
+		background-color: $blue
+		color: $white
+
+a
+	text-decoration: none
+	&:hover, &:active, &:visited
+		text-decoration: none
+
+body
+	font-family: sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1
+	overflow-x: hidden
+	background: #fff
+	padding-top: 80px
+
+	&.fixed
+		position: fixed
+		overflow: hidden
+	+m(1279)
+		padding-top: 60px
+
+input, textarea
+	&::placeholder
+		color: inherit
+		font-size: inherit
+		font-family: inherit
+
+.hidden
+	display: none
+
+.clearfix
+	@include clearfix
+	&:before
+		content: ''
+		display: table
+		clear: both
+
+.main
+	display: block
+	position: relative
+	background-color: $white
+	z-index: 1
+	+cl
+	padding-bottom: 40px
+
+.main-wrapper
+	position: relative
+	z-index: 1
+	margin: 0 auto
+	width: 100%
+	max-width: 1440px
+	+cl

@@ -1,0 +1,11 @@
+ProjectTitle: MegaWatt
+AutorName: MediaLine
+AutorUrl: https://mlgr.ru/
+
+PageList:
+- file: index.html
+  ready: 80
+- file: category.html
+  ready: 80
+- file: article.html
+  ready: 1

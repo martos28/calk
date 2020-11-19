@@ -1,0 +1,38 @@
+title= title || 'Template'
+meta(http-equiv = 'Content-Type', content = 'text/html; charset=utf-8')
+//- viewport для размера страницы
+meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, shrink-to-fit=no")
+//- переключаем ie в режим последней версии
+meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+//- отключаем тулбар для изображений
+meta(name="imagetoolbar" content="no")
+//- просим IE оформлять все в классическом стиле без учета текущей темы операционки
+meta(name="msthemecompatible" content="no")
+//- Mobile Internet Explorer для сглаживания шрифтов
+meta(name="cleartype" content="on")
+//- Запрещаем распознавать номера телефонов и адреса
+meta(name="format-detection" content="telephone=no")
+meta(name="format-detection" content="address=no")
+
+//- Рассказываем соцсетям о нас
+meta(name="ogtitle" property="og:title" content="Page title")
+meta(name="ogdescription" property="og:description" content="page description")
+meta(name="ogimg" property="og:image" content="/img/share.png")
+meta(name="ogtype" property="og:type" content="site")
+
+//- Создаем правильную тему в браузерах
+link(rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png")
+link(rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png")
+link(rel="icon" type="image/png" sizes="194x194" href="./img/favicon/favicon-194x194.png")
+link(rel="icon" type="image/png" sizes="192x192" href="./img/favicon/android-chrome-192x192.png")
+link(rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png")
+link(rel="manifest" href="./img/favicon/site.webmanifest")
+link(rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#0078dc")
+meta(name="apple-mobile-web-app-title" content="Юни Про")
+meta(name="application-name" content="Юни Про")
+meta(name="msapplication-TileColor" content="#0078dc")
+meta(name="msapplication-TileImage" content="./img/favicon/mstile-144x144.png")
+meta(name="theme-color" content="#0078dc")
+
+link(rel="stylesheet", href="css/libs.css")
+link(rel="stylesheet", href="css/main.css")

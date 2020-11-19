@@ -1,0 +1,50 @@
+---
+title: Статья
+---
+extends layouts/_layout
+block content
+  include ./blocks/layout/header
+
+  main.main
+    .konkurs 
+      .main-wrapper  
+        .konkurs-slider.swiper-container.js_slider_konkurs
+          .konkurs-slider__wraper.swiper-wrapper
+            .konkurs-slide.swiper-slide  
+              img(src="https://placeimg.com/1440/500/arch", alt=""  width="1440" height="500").konkurs-slide__image
+              .konkurs-slide__content
+                .konkurs-slide__type Конкурс     
+                h3.konkurs-slide__title Длинное название конкурса
+                p.konkurs-slide__texts Небольшое описание конкурса, примите участие быстрее, <br> он классный! Призовой фонд более 1 000 000 P.
+                button(type="button" data-src="#participation_competition").konkurs-slide__btn-go.popupOpener Принять участие
+            .konkurs-slide.swiper-slide
+              img(src="https://placeimg.com/1440/501/arch", alt=""  width="1440" height="500").konkurs-slide__image
+              .konkurs-slide__content 
+                .konkurs-slide__type Конкурс1
+                h3.konkurs-slide__title Длинное название конкурса
+                p.konkurs-slide__texts Небольшое описание конкурса, примите участие быстрее, <br> он классный! Призовой фонд более 1 000 000 P.
+                button(type="button" data-src="#participation_competition").konkurs-slide__btn-go.popupOpener Принять участие
+            .konkurs-slide.swiper-slide
+              img(src="https://placeimg.com/1440/501/arch", alt=""  width="1440" height="500").konkurs-slide__image
+              .konkurs-slide__content
+                .konkurs-slide__type Конкурс2
+                h3.konkurs-slide__title Длинное название конкурса
+                p.konkurs-slide__texts Небольшое описание конкурса, примите участие быстрее, <br> он классный! Призовой фонд более 1 000 000 P.
+                button(type="button" data-src="#participation_competition").konkurs-slide__btn-go.popupOpener Принять участие
+          .swiper-pagination.konkurs-slider-pagination 
+        h2.h2-konkurs Конкурсы
+        .newsBlock
+          .container     
+            .row
+              include ./blocks/konkurs/k
+              include ./blocks/konkurs/k
+              include ./blocks/konkurs/k
+              include ./blocks/konkurs/k
+              include ./blocks/konkurs/k
+              include ./blocks/konkurs/k
+
+      
+
+
+        
+  include ./blocks/layout/footer
